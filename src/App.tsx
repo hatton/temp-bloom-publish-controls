@@ -1,7 +1,7 @@
 import theme from "./bloomMaterialUITheme";
 import React, { Component } from "react";
 import "./App.css";
-import { BloomReaderPublishScreen } from "./components/BloomReaderPublishScreen";
+import { BRPublishScreen } from "./components/BRPublish/BRPublishScreen";
 import { ThemeProvider } from "@material-ui/styles";
 
 class App extends Component {
@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <ThemeProvider theme={theme}>
         <div className="App">
-          <BloomReaderPublishScreen />
+          <BRPublishScreen />
         </div>
       </ThemeProvider>
     );

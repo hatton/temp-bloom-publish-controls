@@ -5,6 +5,21 @@ import {
   RadioGroup,
   Radio
 } from "@material-ui/core";
+
+/* Example use:
+    const [method, setMethod] = useState("file");
+    return(
+        <ConciseRadioGroup
+          value={method}
+          setter={setMethod}
+          choices={{
+            wifi: "Share over Wi-FI",
+            file: "Save to a file",
+            usb: "Send via USB Cable"
+          }}
+        />)
+*/
+
 export const ConciseRadioGroup: React.FunctionComponent<{
   choices: any;
   value: string;
