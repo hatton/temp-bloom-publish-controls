@@ -1,7 +1,9 @@
+/** @jsx jsx */ // required to add emotions'css prop to elements
+
 import React from "react";
 import { Typography } from "@material-ui/core";
-import { css } from "emotion";
-
+import { css } from "@emotion/core";
+import { jsx } from "@emotion/core";
 /* 
   Example usage:
   <BasePublishScreen>
@@ -22,12 +24,12 @@ import { css } from "emotion";
 */
 
 export const BasePublishScreen: React.FunctionComponent = props => (
-  <div className={screen}>
-    <main className={main}>
+  <div css={screen}>
+    <main css={main}>
       {findOne(props.children, PreviewPanel)}
       {findOne(props.children, PublishPanel)}
     </main>
-    <aside className={sidePanel}>
+    <aside css={sidePanel}>
       {findAny(props.children, SettingsGroup)}
       {findOne(props.children, HelpGroup)}
     </aside>
@@ -37,7 +39,7 @@ export const BasePublishScreen: React.FunctionComponent = props => (
 export const PreviewPanel: React.FunctionComponent = props => {
   return (
     <section
-      className={css`
+      css={css`
         height: 300px;
         width: 100%;
         background-color: grey;
@@ -50,7 +52,7 @@ export const PreviewPanel: React.FunctionComponent = props => {
 export const PublishPanel: React.FunctionComponent = props => {
   return (
     <section
-      className={css`
+      css={css`
         display: flex;
         flex-direction: column;
         padding: 20px;
@@ -65,7 +67,7 @@ export const SettingsGroup: React.FunctionComponent<{
 }> = props => {
   return (
     <section
-      className={css`
+      css={css`
         margin-top: 20px;
       `}
     >
@@ -79,7 +81,7 @@ export const SettingsGroup: React.FunctionComponent<{
 export const HelpGroup: React.FunctionComponent = props => {
   return (
     <section
-      className={css`
+      css={css`
         margin-top: auto;
         margin-bottom: 20px;
         display: flex;

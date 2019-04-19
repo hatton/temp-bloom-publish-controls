@@ -1,10 +1,9 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "types": [
+      "@emotion/core" //addition of the css prop/attribute to the HTMLAttributes
     ],
     "allowJs": true,
     "skipLibCheck": true,
@@ -19,7 +18,5 @@
     "noEmit": true,
     "jsx": "preserve"
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }
