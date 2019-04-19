@@ -1,15 +1,17 @@
+import theme from "./bloomMaterialUITheme";
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import { BasePublishScreen } from "./components/BasePublishScreen";
-import { AndroidPublishScreen } from "./components/AndroidPublishScreen";
+import { BloomReaderPublishScreen } from "./components/BloomReaderPublishScreen";
+import { ThemeProvider } from "@material-ui/styles";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <AndroidPublishScreen />
-      </div>
+      <ThemeProvider theme={theme}>
+        <div className="App">
+          <BloomReaderPublishScreen />
+        </div>
+      </ThemeProvider>
     );
   }
 }
