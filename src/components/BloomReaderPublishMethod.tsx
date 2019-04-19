@@ -1,18 +1,28 @@
 import React, { useState } from "react";
-import wifi from "./publish-bloomreader-wifi.svg";
+import wifiImage from "./publish-bloomreader-wifi.svg";
+import usbImage from "./publish-bloomreader-usb.svg";
+import fileImage from "./publish-bloomreader-file.svg";
 import Button from "@material-ui/core/Button";
 import { css } from "emotion";
 import { ConciseRadioGroup } from "./ConciseRadioGroup";
 
+const methodNameToImageUrl = {
+  wifi: wifiImage,
+  usb: usbImage,
+  file: fileImage
+};
+
 // This is a set of radio buttons and image that goes with each choice, plus a button to start off the sharing/saving
 export const BloomReaderPublishMethod = () => {
-  const [method, setMethod] = useState("wifi"); //initially set state to wifi. Enhance: remember from last time?
+  const [method, setMethod] = useState("file"); //initially set state to wifi. Enhance: remember from last time?
+  const methodImage = (methodNameToImageUrl as any)[method];
   return (
     <>
       <div
         className={css`
           display: flex;
           flex-direction: row;
+          height: 100px;
         `}
       >
         <ConciseRadioGroup
@@ -25,12 +35,12 @@ export const BloomReaderPublishMethod = () => {
           }}
         />
         <img
-          src={wifi}
+          src={methodImage}
           className={css`
             width: 200px;
             margin-left: 50px;
           `}
-          alt="An image reinforcing the current way of publishing."
+          alt="An image that just illustrates the currently selected publishing method."
         />
       </div>
       <div //had to wrap this button because else material-ui overrides the margin
